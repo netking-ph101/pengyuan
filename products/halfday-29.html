@@ -96,13 +96,7 @@ SUP體驗，  浮潛體驗，  人氣水上溜滑梯，  海上舉杯酒水Party
   
     
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NL3KZ8L6');</script>
-  <!-- End Google Tag Manager -->
+
 
 
 </head>
@@ -595,6 +589,32 @@ SUP體驗，  浮潛體驗，  人氣水上溜滑梯，  海上舉杯酒水Party
  
 </nav>
 
+<!-- 改善回上一層 會關掉navi bar -->
+<script>
+   
+  document.addEventListener('DOMContentLoaded', function () {
+  // 找到左右兩個 collapse 區塊
+  const collapses = document.querySelectorAll('.navbar-collapse');
+
+  // 找到所有 collapse 區塊裡的 a 連結
+  const allLinks = document.querySelectorAll('.navbar-collapse a');
+
+  allLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      // 手機版才收起
+      if (window.innerWidth < 992) {
+        // 如果是 dropdown toggle，就不要收起
+        if (!link.classList.contains('dropdown-toggle')) {
+          collapses.forEach(collapse => {
+            collapse.classList.remove('show');
+          });
+        }
+      }
+    });
+  });
+});
+</script>
+
   <main class="main pt-4">
     <div class="container">
       <div class="row">
@@ -610,7 +630,7 @@ SUP體驗，  浮潛體驗，  人氣水上溜滑梯，  海上舉杯酒水Party
            
 
             
-            <div id="carouse1" class="carousel slide">
+            <div id="carouse1" class="carousel slide"  data-bs-ride="carousel" >
               <div class="carousel-indicators">
 
                 
